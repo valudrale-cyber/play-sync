@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>PLAY SYNC</title>
+  <meta name="description" content="Latest releases & roster highlights — curated for sync." />
+  <link rel="icon" href="./assets/play-syncs-logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="PLAY SYNC home">
+        <img class="brand-logo" src="./assets/play-syncs-logo.png" alt="PLAY SYNC logo" />
+        <span class="brand-name">PLAY SYNC</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#playlist">Playlist</a>
+        <a href="#roster">Roster</a>
+        <a href="#tracks">Tracks</a>
+        <a href="#links">Links</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">SYNC READY</p>
+          <h1>PLAY SYNC</h1>
+          <p class="subtitle">Latest releases & roster highlights — curated for sync.</p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="https://open.spotify.com/playlist/0zjmuRFXcjrcbVYP55ehEj?si=c14ecad8636640f1" target="_blank" rel="noopener noreferrer">
+              Listen on Spotify
+            </a>
+            <a class="btn ghost" href="#roster">View Roster</a>
+          </div>
+
+          <div class="micro">
+            <span class="dot"></span>
+            <span>Fast links. Clean roster. Shareable.</span>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-hidden="true">
+          <div class="card-top">
+            <div class="chip">Curated</div>
+            <div class="chip">High-contrast</div>
+            <div class="chip">Supervisor-friendly</div>
+          </div>
+          <div class="timecode">
+            <span>00:00:12:08</span>
+            <span>PLAYLIST</span>
+            <span>ROSTER</span>
+          </div>
+          <div class="wave" role="img" aria-label="Subtle waveform motif"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="playlist">
+      <div class="container">
+        <div class="section-head">
+          <h2>Playlist</h2>
+          <p class="muted">A quick snapshot of latest releases — designed for fast scanning and saves.</p>
+        </div>
+
+        <div class="playlist-grid">
+          <div class="embed-card">
+            <div class="embed-wrap" aria-label="Spotify playlist embed">
+              <iframe
+                title="PLAY SYNC playlist"
+                src="https://open.spotify.com/embed/playlist/0zjmuRFXcjrcbVYP55ehEj?utm_source=generator"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              ></iframe>
+            </div>
+            <div class="embed-fallback">
+              <a class="btn primary" href="https://open.spotify.com/playlist/0zjmuRFXcjrcbVYP55ehEj?si=c14ecad8636640f1" target="_blank" rel="noopener noreferrer">
+                Listen on Spotify
+              </a>
+              <p class="muted small">If the embed is blocked on your network, the link above always works.</p>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <h3>Why this exists</h3>
+            <ul class="bullets">
+              <li>One-click access to current releases.</li>
+              <li>Clean, searchable roster for quick matching.</li>
+              <li>Direct links to Dale Play Records & Publishing.</li>
+            </ul>
+            <div class="divider"></div>
+            <p class="muted small">
+              Tip: use <kbd>⌘</kbd> / <kbd>Ctrl</kbd> + <kbd>F</kbd> or the roster search for instant lookup.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roster">
+      <div class="container">
+        <div class="section-head">
+          <h2>Roster</h2>
+          <p class="muted">Browse Dale Play Records and Dale Play Publishing. Live search filters instantly.</p>
+        </div>
+
+        <div class="roster-controls" role="group" aria-label="Roster selector">
+          <button class="seg active" data-roster="records" type="button">
+            Dale Play Records <span class="count" id="count-records"></span>
+          </button>
+          <button class="seg" data-roster="publishing" type="button">
+            Dale Play Publishing <span class="count" id="count-publishing"></span>
+          </button>
+
+          <div class="search-wrap">
+            <label class="sr-only" for="search">Search artist…</label>
+            <input id="search" type="search" placeholder="Search artist…" autocomplete="off" />
+            <span class="search-hint" aria-hidden="true">⌘K</span>
+          </div>
+        </div>
+
+        <div class="roster-meta">
+          <span class="muted small" id="results-meta"></span>
+          <button class="btn tiny ghost" id="clear-search" type="button" aria-label="Clear search">Clear</button>
+        </div>
+
+        <div class="roster-grid" id="roster-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" id="tracks">
+      <div class="container">
+        <div class="section-head">
+          <h2>Tracks</h2>
+          <p class="muted">Filter by usage, mood, energy, duration and rights — built for music supervisors.</p>
+        </div>
+
+        <div class="tracks-shell">
+          <aside class="tracks-filters" aria-label="Track filters">
+            <div class="tracks-top">
+              <label class="sr-only" for="tracks-search">Search tracks</label>
+              <input id="tracks-search" type="search" placeholder="Search by title, artist, album, tags…" autocomplete="off" />
+              <button class="btn tiny ghost" id="tracks-clear" type="button">Clear</button>
+            </div>
+
+            <div class="tracks-filter-block">
+              <div class="tracks-filter-title">Core filters</div>
+
+              <div class="tf">
+                <div class="tf-label">Usage / Scene</div>
+                <div class="tf-options" id="tf-usage"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Mood</div>
+                <div class="tf-options" id="tf-mood"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Energy</div>
+                <div class="tf-options" id="tf-energy"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Duration</div>
+                <div class="tf-options" id="tf-durationBucket"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Genre</div>
+                <div class="tf-options" id="tf-genre"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Rights</div>
+                <div class="tf-options" id="tf-rights"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Clearance</div>
+                <div class="tf-options" id="tf-clearance"></div>
+              </div>
+            </div>
+
+            <details class="tracks-filter-block" open>
+              <summary class="tracks-filter-title">Advanced filters</summary>
+
+              <div class="tf">
+                <div class="tf-label">Vocals</div>
+                <div class="tf-options" id="tf-vocals"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Language</div>
+                <div class="tf-options" id="tf-language"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Tempo</div>
+                <div class="tf-options" id="tf-tempo"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Structure</div>
+                <div class="tf-options" id="tf-structure"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Collections</div>
+                <div class="tf-options" id="tf-collection"></div>
+              </div>
+
+              <div class="tf">
+                <div class="tf-label">Sounds Like</div>
+                <div class="tf-options" id="tf-soundsLike"></div>
+              </div>
+            </details>
+
+            <p class="muted small tracks-hint">Tip: multi-select chips. Results update instantly.</p>
+          </aside>
+
+          <section class="tracks-results" aria-label="Track results">
+            <div class="tracks-bar">
+              <span class="muted small" id="tracks-count">Loading…</span>
+              <div class="tracks-sort">
+                <label class="muted small" for="tracks-sort">Sort</label>
+                <select id="tracks-sort">
+                  <option value="newest">Newest</option>
+                  <option value="artist">Artist A–Z</option>
+                  <option value="title">Title A–Z</option>
+                  <option value="mood">Mood</option>
+                  <option value="usage">Usage</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="tracks-grid" id="tracks-grid" aria-live="polite"></div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="links">
+      <div class="container">
+        <div class="section-head">
+          <h2>Links</h2>
+          <p class="muted">Quick access to the label and publishing pages.</p>
+        </div>
+
+        <div class="link-cards">
+          <a class="link-card" href="https://www.daleplayrecords.com/" target="_blank" rel="noopener noreferrer">
+            <div class="link-card-top">
+              <span class="link-title">Dale Play Records</span>
+              <span class="link-arrow" aria-hidden="true">↗</span>
+            </div>
+            <p class="muted small">Label website & roster hub.</p>
+          </a>
+
+          <a class="link-card" href="https://www.daleplayrecords.com/" target="_blank" rel="noopener noreferrer">
+            <div class="link-card-top">
+              <span class="link-title">Dale Play Publishing</span>
+              <span class="link-arrow" aria-hidden="true">↗</span>
+            </div>
+            <p class="muted small">Publishing roster & contact entry point.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© PLAY SYNC</span>
+      <span class="muted">For music supervision &amp; sync inquiries.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
